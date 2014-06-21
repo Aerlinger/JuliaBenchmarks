@@ -15,6 +15,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'activegist'
 gem 'zurb-foundation'
 gem 'devise'
+gem 'paper_trail'
 
 group :test do
   gem 'rspec-rails'
