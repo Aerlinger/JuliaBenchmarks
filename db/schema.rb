@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621171220) do
+ActiveRecord::Schema.define(version: 20140621171923) do
 
   create_table "benchmark_results", force: true do |t|
     t.string   "category"
@@ -28,16 +28,21 @@ ActiveRecord::Schema.define(version: 20140621171220) do
     t.text     "environment_info"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "snippet_id"
   end
+
+  add_index "benchmark_results", ["snippet_id"], name: "index_benchmark_results_on_snippet_id"
 
   create_table "snippets", force: true do |t|
     t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_snippet_id"
+    t.integer  "user_id"
   end
 
   add_index "snippets", ["parent_snippet_id"], name: "index_snippets_on_parent_snippet_id"
+  add_index "snippets", ["user_id"], name: "index_snippets_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "score"

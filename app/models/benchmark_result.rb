@@ -17,6 +17,11 @@
 #  environment_info :text
 #  created_at       :datetime
 #  updated_at       :datetime
+#  snippet_id       :integer
+#
+# Indexes
+#
+#  index_benchmark_results_on_snippet_id  (snippet_id)
 #
 
 class BenchmarkResult < ActiveRecord::Base
