@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'activegist'
 gem 'zurb-foundation'
+gem 'devise'
 
 group :test do
   gem 'rspec-rails'
