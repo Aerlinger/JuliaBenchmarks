@@ -16,7 +16,15 @@
 #
 
 class Snippet < ActiveRecord::Base
+  has_paper_trail
+
   belongs_to :user
   has_many :benchmark_results
   belongs_to :parent_snippet, foreign_key: :parent_snippet_id
+
+  validates_presence_of :code
+
+  def fork!
+    Snippet.create! code: code, parent_snippet_id: id
+  end
 end

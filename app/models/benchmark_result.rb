@@ -27,4 +27,8 @@
 class BenchmarkResult < ActiveRecord::Base
   belongs_to :user, through: :snippet
   belongs_to :snippet
+
+  def readonly?
+    new_record? ? false : true
+  end
 end

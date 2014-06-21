@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 describe ReplController do
+  describe "get #demo" do
+    before do
+      @user = FactoryGirl.create :user
+      @snippet = FactoryGirl.create :snippet
+
+      get "demo"
+    end
+
+    it { expect(assigns(:snippet)).to be_a_new(Snippet) }
+  end
+
   describe "post #run" do
     before do
       Net::HTTP.should_receive(:post_form).with anything, { "code" => "println(\"hello\")" } do
