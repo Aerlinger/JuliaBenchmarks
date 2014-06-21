@@ -21,6 +21,10 @@ group :development do
   gem 'spring'
 end
 
+group :test, :development do
+  gem 'guard-rspec', require: false
+end
+
 group :production do
   gem 'pg'
 end
