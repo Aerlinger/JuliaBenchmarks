@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'rabl'
 gem 'annotate'
 gem 'haml'
+gem 'simple_form'
 
 group :test do
   gem 'rspec-rails'

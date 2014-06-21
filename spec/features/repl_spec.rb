@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Interactive Web Repl" do
+describe "Interactive Web Repl", pending: true do
   before do
     visit "/demo"
   end

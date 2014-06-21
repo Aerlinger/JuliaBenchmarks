@@ -1,0 +1,4 @@
+= simple_form_for @repl, url: run_path, remote: true, method: :post, disable_with: "Running!", html: { id: "repl_form" } do |f|
+  = f.input :code, as: :text, label: false, placeholder: "Enter your Julia code here", input_html: { id: "repl_code" }
+
+  = f.submit "Run", class: "code nice large button"
