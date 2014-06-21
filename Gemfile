@@ -22,7 +22,11 @@ group :development do
 end
 
 group :test, :development do
+  gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'growl'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 group :production do
