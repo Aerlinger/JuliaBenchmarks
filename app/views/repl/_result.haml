@@ -3,11 +3,11 @@
   %hr
 
   %code
-    - @repl_result.output.each do |output|
+    -# @repl_result.output.each do |output|
       = output
 
-    - if @repl_result.result.present?
+    -# if @repl_result.result.present?
       =" => #{@repl_result.result}"
 
-    - if @repl_result.exception.present?
+    -# if @repl_result.exception.present?
       = simple_format @repl.exception

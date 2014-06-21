@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require foundation
+//= require codemirror
+//= require julia
+//= require vim
+//= require emacs
+//= require editor
 //= require_tree .
