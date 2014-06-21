@@ -7,6 +7,7 @@ class ReplController < ApplicationController
   def run
     code = params[:repl].fetch(:code)
 
+    # This call blocks until return
     response_hash = JuliaRemoteExecutionContext.safe_eval(code)
 
     @output    = response_hash.fetch(:output)
