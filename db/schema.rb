@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621170838) do
+ActiveRecord::Schema.define(version: 20140621171220) do
 
   create_table "benchmark_results", force: true do |t|
     t.string   "category"
@@ -32,10 +32,12 @@ ActiveRecord::Schema.define(version: 20140621170838) do
 
   create_table "snippets", force: true do |t|
     t.text     "code"
-    t.string   "previous_snippet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_snippet_id"
   end
+
+  add_index "snippets", ["parent_snippet_id"], name: "index_snippets_on_parent_snippet_id"
 
   create_table "users", force: true do |t|
     t.string   "score"
