@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "static_pages#home"
 
-
   get "/users/:id"      => "users#show"
   get "/users/edit/:id" => "users#edit"
   put "/users/edit/:id" => "users#update"
