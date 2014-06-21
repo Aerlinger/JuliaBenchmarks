@@ -11,6 +11,9 @@ gem 'rabl'
 gem 'annotate'
 gem 'haml'
 gem 'simple_form'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activegist'
+gem 'zurb-foundation'
 
 group :test do
   gem 'rspec-rails'
