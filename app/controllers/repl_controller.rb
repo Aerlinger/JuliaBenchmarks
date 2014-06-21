@@ -7,8 +7,10 @@ class ReplController < ApplicationController
   def run
     code = params[:repl].fetch(:code)
 
-    julia_context = JuliaRemoteExecutionContext.new(code)
+    response_hash = JuliaRemoteExecutionContext.safe_eval(code)
 
-    @result = julia_context.execute(code)
+    @output    = response_hash.fetch(:output)
+    @result    = response_hash.fetch(:result)
+    @exception = response_hash.fetch(:exception)
   end
 end
