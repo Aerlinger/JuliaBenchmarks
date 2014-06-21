@@ -20,4 +20,6 @@
 #
 
 class BenchmarkResult < ActiveRecord::Base
+  belongs_to :user, through: :snippet
+  belongs_to :snippet
 end

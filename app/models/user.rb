@@ -32,4 +32,7 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable
+
+  has_many :snippets
+  has_many :benchmark_results, through: :snippets
 end
