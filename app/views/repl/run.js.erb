@@ -1,0 +1,7 @@
+<%- @output.each do |output| %>
+  <%= "console.log('#{j output}');".html_safe %>
+<% end %>
+
+console.log("=> <%= j @result %>")
+console.log("<%# escape_javascript @exception %>")
+
