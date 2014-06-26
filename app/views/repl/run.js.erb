@@ -1,7 +1,9 @@
-<%- @output.each do |output| %>
-  <%= "console.log('#{j output}');".html_safe %>
+<%- if @exception.blank? %>
+  <%- @output.each do |output| %>
+    <%= "console.log('#{j output}');".html_safe %>
+  <% end %>
+
+  console.log("=> <%= @result %>");
+<%- else %>
+  console.log("<%= escape_javascript @exception %>");
 <% end %>
-
-console.log("=> <%= j @result %>")
-console.log("<%# escape_javascript @exception %>")
-
