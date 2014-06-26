@@ -14,6 +14,7 @@ describe ReplController do
 
   describe "post #run" do
     before do
+      # TODO: It may be useful to record and stub this call via WebMock
       Net::HTTP.should_receive(:post_form).with anything, { "code" => "println(\"hello\")" } do
         OpenStruct.new.tap do |os|
           os.body = <<-RES
