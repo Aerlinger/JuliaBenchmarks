@@ -16,7 +16,7 @@ class JuliaRemoteExecutionContext
     rescue => exc
       Rails.logger.error exc.inspect
 
-      JuliaExecutionError.new exc.inspect
+      raise JuliaExecutionError, exc.inspect.to_s
     end
 
     def process_response(response)

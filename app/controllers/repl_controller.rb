@@ -1,5 +1,5 @@
 class ReplController < ApplicationController
-  respond_to :js, only: :run
+  respond_to :js, only: [:run, :fail_to_connect]
   before_filter :save_snippet_to_current_user
   layout false, only: :run
 
@@ -20,6 +20,16 @@ class ReplController < ApplicationController
     respond_to do |format|
       format.js
     end
+  rescue JuliaRemoteExecutionContext::JuliaExecutionError => e
+    respond_to do |format|
+      format.js {
+        render action: :fail_to_connect
+      }
+    end
+  end
+
+  def fail_to_connect
+
   end
 
   private
