@@ -8,4 +8,6 @@
   console.log("<%= escape_javascript @exception %>");
 <% end %>
 
-$('#result').text('<%= j output %>'.html_safe);
+printError('<%= j output %>');
+
+//$('#result').text('<%= j output %>'.html_safe);
