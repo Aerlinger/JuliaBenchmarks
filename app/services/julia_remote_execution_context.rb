@@ -13,10 +13,12 @@ class JuliaRemoteExecutionContext
       http_response = call(code, "#{@url}:#{@port}")
 
       process_response(http_response)
-    rescue => exc
-      Rails.logger.error "Could not evaluate response from remote server #{exc.inspect}"
+    rescue => e
+      message = "Could not evaluate response from remote server: (#{e.class})"
 
-      raise JuliaExecutionError, exc.inspect.to_s
+      Rails.logger.error message
+
+      raise JuliaExecutionError, message
     end
 
     def process_response(response)

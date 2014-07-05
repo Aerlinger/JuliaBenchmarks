@@ -23,6 +23,9 @@ class ReplController < ApplicationController
       format.js
     end
   rescue JuliaRemoteExecutionContext::JuliaExecutionError => e
+    # Getting a response failed for some reason or another
+    @error_message = e.message
+
     respond_to do |format|
       format.js {
         render action: :fail_to_connect
@@ -31,7 +34,6 @@ class ReplController < ApplicationController
   end
 
   def fail_to_connect
-
   end
 
   private
