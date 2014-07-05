@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621171923) do
+ActiveRecord::Schema.define(version: 20140705211701) do
 
   create_table "benchmark_results", force: true do |t|
     t.string   "category"
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 20140621171923) do
     t.datetime "updated_at"
     t.integer  "parent_snippet_id"
     t.integer  "user_id"
+    t.string   "public_token"
   end
 
   add_index "snippets", ["parent_snippet_id"], name: "index_snippets_on_parent_snippet_id"
+  add_index "snippets", ["public_token"], name: "index_snippets_on_public_token", unique: true
   add_index "snippets", ["user_id"], name: "index_snippets_on_user_id"
 
   create_table "users", force: true do |t|
