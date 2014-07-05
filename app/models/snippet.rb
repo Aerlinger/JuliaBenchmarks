@@ -18,6 +18,9 @@
 class Snippet < ActiveRecord::Base
   has_paper_trail
 
+  HasTokens.on self
+  has_tokens public: 10
+
   belongs_to :user
   has_many :benchmark_results
   belongs_to :parent_snippet, foreign_key: :parent_snippet_id
