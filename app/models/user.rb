@@ -34,6 +34,20 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
+  validates_presence_of :password, unless: :guest?
+
   has_many :snippets
   has_many :benchmark_results, through: :snippets
+
+  def promote_guest
+    self.guest = false
+  end
+
+  def promote_guest!
+    promote_guest && save!
+  end
+
+  def self.new_guest
+    new { |user| user.guest = true }
+  end
 end

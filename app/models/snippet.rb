@@ -9,6 +9,7 @@
 #  parent_snippet_id :integer
 #  user_id           :integer
 #  public_token      :string(255)
+#  language_version  :string(255)
 #
 # Indexes
 #

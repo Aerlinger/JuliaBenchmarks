@@ -10,6 +10,8 @@ class ReplController < ApplicationController
   def run
     code = params["snippet"].fetch("code")
 
+    @snippet = Snippet.new code: code
+
     # This is a blocking call
     response_hash = JuliaRemoteExecutionContext.safe_eval(code)
 
