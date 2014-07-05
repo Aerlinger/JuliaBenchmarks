@@ -74,8 +74,6 @@ lol = Spec.suite
 
 Spec.suite
 
-
-
 #@describe "A simple example" begin
 #   @before begin
 #     before_var = 180

@@ -10,7 +10,7 @@ class ReplController < ApplicationController
   def run
     code = params["snippet"].fetch("code")
 
-    # This call blocks until return
+    # This is a blocking call
     response_hash = JuliaRemoteExecutionContext.safe_eval(code)
 
     @output    = response_hash.fetch(:output)
@@ -18,7 +18,7 @@ class ReplController < ApplicationController
     @exception = response_hash.fetch(:exception)
 
     respond_to do |format|
-      format.js #{ layout: false }
+      format.js
     end
   end
 
