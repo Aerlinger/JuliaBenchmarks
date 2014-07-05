@@ -19,12 +19,14 @@
   min-width: 2em;
   height: 100%;
 }
+
 .CodeMirror-gutter-text {
   color: #aaa;
   text-align: right;
   padding: .4em .2em .4em .4em;
   white-space: pre !important;
 }
+
 .CodeMirror-lines {
   padding: .4em;
 }
@@ -108,3 +110,7 @@ span.cm-link {text-decoration: underline;}
 
 div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+
+#run {
+  width: 100%;
+}
