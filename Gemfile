@@ -16,6 +16,8 @@ gem 'activegist'
 gem 'zurb-foundation'
 gem 'devise'
 gem 'paper_trail'
+gem 'has_tokens'
+#gem 'active_gist'
 
 group :test do
   gem 'rspec-rails'
